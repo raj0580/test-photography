@@ -3,36 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vibhu Trivedi | Art Director & Designer</title>
+    <title>MAA PHOTOGRAPHY | Rupam | Professional Wedding Photographer</title>
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Vibhu Trivedi is an Art Director with over 10 years of experience, specializing in crafting impactful visual solutions and teaching design.">
-    <meta name="keywords" content="Art Director, Designer, Portfolio, UI/UX, Graphic Design, Design Courses, Vibhu Trivedi">
-    <meta name="author" content="Vibhu Trivedi">
+    <meta name="description" content="MAA PHOTOGRAPHY by Rupam offers professional photography and cinematography for weddings, pre-weddings, rice ceremonies, birthdays, and all special events in a cinematic style.">
+    <meta name="keywords" content="wedding photography, bengali wedding, kolkata photographer, maa photography, rupam photographer, pre wedding shoot, rice ceremony photography, birthday photographer">
+    <meta name="author" content="Rupam - MAA PHOTOGRAPHY">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://your-website-url.com/">
-    <meta property="og:title" content="Vibhu Trivedi | Art Director & Designer">
-    <meta property="og:description" content="Imagine, Create, Inspire. A portfolio of work by Vibhu Trivedi.">
-    <!-- Replace with your own preview image -->
-    <meta property="og:image" content="https://i.imgur.com/your-preview-image.jpg"> 
+    <meta property="og:title" content="MAA PHOTOGRAPHY | Capturing Your Special Day">
+    <meta property="og:description" content="Professional cinematic photography for weddings, pre-weddings, and all your special events.">
+    <!-- IMPORTANT: Replace with your own preview image -->
+    <meta property="og:image" content="https://images.pexels.com/photos/1729931/pexels-photo-1729931.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"> 
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://your-website-url.com/">
-    <meta property="twitter:title" content="Vibhu Trivedi | Art Director & Designer">
-    <meta property="twitter:description" content="Imagine, Create, Inspire. A portfolio of work by Vibhu Trivedi.">
-    <!-- Replace with your own preview image -->
-    <meta property="twitter:image" content="https://i.imgur.com/your-preview-image.jpg">
+    <meta property="twitter:title" content="MAA PHOTOGRAPHY | Capturing Your Special Day">
+    <meta property="twitter:description" content="Professional cinematic photography for weddings, pre-weddings, and all your special events.">
+    <!-- IMPORTANT: Replace with your own preview image -->
+    <meta property="twitter:image" content="https://images.pexels.com/photos/1729931/pexels-photo-1729931.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
 
     <!-- Favicon (replace with your own) -->
-    <link rel="icon" href="https://i.imgur.com/G4O0VRe.png">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📸</text></svg>">
     
-    <!-- Google Fonts: Poppins -->
+    <!-- Google Fonts: Cormorant Garamond (for headings) & Poppins (for body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -41,13 +41,15 @@
             theme: {
                 extend: {
                     colors: {
-                        'brand-dark': '#0D0D0D',
-                        'brand-lime': '#D4FF00',
-                        'brand-gray': '#1A1A1A',
-                        'text-light': '#E0E0E0',
-                        'text-medium': '#A3A3A3',
+                        'dark-bg': '#121212',
+                        'dark-card': '#1E1E1E',
+                        'gold': '#E2B873', // A rich, warm gold
+                        'light-text': '#E0E0E0',
+                        'subtle-text': '#A0A0A0',
+                        'maroon': '#800000'
                     },
                     fontFamily: {
+                        'serif': ['Cormorant Garamond', 'serif'],
                         'sans': ['Poppins', 'sans-serif'],
                     }
                 }
@@ -61,383 +63,331 @@
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 
-    <!-- Custom CSS for animations and tweaks -->
+    <!-- Custom CSS for animations and cinematic feel -->
     <style>
         .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
         .fade-in.is-visible { opacity: 1; transform: translateY(0); }
-        .highlight { background-color: #D4FF00; color: #0D0D0D; padding: 0.1em 0.4em; border-radius: 0.375rem; }
-        .form-input { background-color: transparent; border: 1px solid #404040; border-radius: 9999px; padding: 1rem 1.5rem; transition: border-color 0.3s; width: 100%; }
-        .form-input:focus { outline: none; border-color: #D4FF00; }
-        .btn-outline { border: 1px solid #404040; border-radius: 9999px; padding: 0.75rem 1.5rem; transition: all 0.3s; }
-        .btn-outline:hover { background-color: #D4FF00; color: #0D0D0D; border-color: #D4FF00; }
-        .gradient-bg { background-image: radial-gradient(circle at 25% 30%, rgba(212, 255, 0, 0.1), transparent 30%), radial-gradient(circle at 75% 70%, rgba(212, 255, 0, 0.1), transparent 30%); }
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
+        .hero-video-fallback {
+            background-image: url('https://images.pexels.com/photos/1729931/pexels-photo-1729931.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+            background-size: cover;
+            background-position: center;
         }
-        .animate-scroll {
-            animation: scroll 40s linear infinite;
+        .btn-gold {
+            background-color: #E2B873;
+            color: #121212;
+            border: 1px solid #E2B873;
+            transition: all 0.3s ease-in-out;
+        }
+        .btn-gold:hover {
+            background-color: transparent;
+            color: #E2B873;
         }
     </style>
 </head>
 
-<body class="bg-brand-dark text-text-light font-sans" x-data="pageData()" @scroll.window="handleScroll()">
+<body class="bg-dark-bg text-light-text font-sans" x-data="pageData()" @scroll.window="handleScroll()">
 
     <!-- ====== Header ====== -->
-    <header x-data="{ mobileMenuOpen: false }" class="fixed top-0 left-0 w-full z-50 bg-brand-dark/80 backdrop-blur-md shadow-lg shadow-black/10">
+    <header x-data="{ scrolled: false, mobileMenuOpen: false }" 
+            @scroll.window="scrolled = (window.scrollY > 50)"
+            :class="{ 'bg-dark-bg/90 shadow-lg shadow-black/20 backdrop-blur-sm': scrolled }"
+            class="fixed top-0 left-0 w-full z-50 transition-colors duration-300">
         <div class="container mx-auto px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
+            <div class="flex items-center justify-between h-24">
                 <!-- Logo -->
-                <a href="#" class="flex items-center gap-2">
-                    <!-- Replace with your logo image -->
-                    <img src="https://i.imgur.com/G4O0VRe.png" alt="Logo" class="h-10 w-10">
-                    <span class="font-bold text-lg">designwithvibhu</span>
+                <a href="#home" class="text-3xl font-serif font-bold text-gold tracking-wider">
+                    MAA PHOTOGRAPHY
                 </a>
 
                 <!-- Desktop Navigation -->
-                <nav class="hidden md:flex items-center space-x-6">
-                    <a href="#portfolio" class="text-text-medium hover:text-white transition">Portfolio</a>
-                    <a href="#courses" class="text-text-medium hover:text-white transition">Courses</a>
-                    <a href="#about" class="text-text-medium hover:text-white transition">About</a>
-                    <a href="#contact" class="text-text-medium hover:text-white transition">Contact</a>
-                    <a href="#" class="bg-brand-lime text-brand-dark font-semibold py-2 px-5 rounded-lg hover:opacity-80 transition">New Course</a>
+                <nav class="hidden md:flex space-x-8 text-lg">
+                    <a href="#services" class="hover:text-gold transition-colors">Services</a>
+                    <a href="#gallery" class="hover:text-gold transition-colors">Gallery</a>
+                    <a href="#about" class="hover:text-gold transition-colors">About</a>
+                    <a href="#contact" class="hover:text-gold transition-colors">Contact</a>
                 </nav>
 
                 <!-- Mobile Menu Button -->
                 <div class="md:hidden">
                     <button @click="mobileMenuOpen = !mobileMenuOpen" class="focus:outline-none text-2xl">
-                        <i :class="mobileMenuOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'"></i>
+                        <i :class="mobileMenuOpen ? 'fas fa-times' : 'fas fa-bars'"></i>
                     </button>
                 </div>
             </div>
         </div>
         <!-- Mobile Menu -->
-        <div x-show="mobileMenuOpen" class="md:hidden bg-brand-gray" x-transition>
-             <nav class="flex flex-col items-center space-y-4 py-6">
-                <a @click="mobileMenuOpen = false" href="#portfolio" class="hover:text-brand-lime transition">Portfolio</a>
-                <a @click="mobileMenuOpen = false" href="#courses" class="hover:text-brand-lime transition">Courses</a>
-                <a @click="mobileMenuOpen = false" href="#about" class="hover:text-brand-lime transition">About</a>
-                <a @click="mobileMenuOpen = false" href="#contact" class="hover:text-brand-lime transition">Contact</a>
-                <a href="#" class="bg-brand-lime text-brand-dark font-semibold py-2 px-5 rounded-lg mt-4">New Course</a>
+        <div x-show="mobileMenuOpen" @click.away="mobileMenuOpen = false" class="md:hidden bg-dark-card" x-transition>
+            <nav class="flex flex-col items-center space-y-6 py-8">
+                <a @click="mobileMenuOpen = false" href="#services" class="text-lg hover:text-gold transition-colors">Services</a>
+                <a @click="mobileMenuOpen = false" href="#gallery" class="text-lg hover:text-gold transition-colors">Gallery</a>
+                <a @click="mobileMenuOpen = false" href="#about" class="text-lg hover:text-gold transition-colors">About</a>
+                <a @click="mobileMenuOpen = false" href="#contact" class="text-lg hover:text-gold transition-colors">Contact</a>
             </nav>
         </div>
     </header>
 
     <main>
+
         <!-- ====== Hero Section ====== -->
-        <section id="home" class="relative min-h-screen flex items-center overflow-hidden gradient-bg pt-20">
-            <div class="container mx-auto px-6 lg:px-8 z-10">
-                <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
-                    <!-- Text Content -->
-                    <div class="text-center md:text-left">
-                        <p class="text-lg text-text-medium mb-2">Hi I'm Vibhu Trivedi</p>
-                        <h2 class="text-2xl text-brand-lime font-semibold mb-8">Art Director</h2>
-                        <h1 class="text-6xl lg:text-8xl font-bold leading-tight">
-                            Imagine,<br>
-                            <span class="text-brand-lime">Create,</span><br>
-                            Inspire
-                        </h1>
-                    </div>
-                    <!-- Image Content -->
-                    <div class="relative h-[70vh] md:h-auto">
-                        <!-- Replace this with your image of the person -->
-                        <img src="https://i.imgur.com/eBvJ2yS.png" alt="Vibhu Trivedi" class="absolute bottom-0 right-1/2 translate-x-1/2 md:translate-x-0 md:left-0 md:relative max-h-full w-auto object-contain">
-                    </div>
-                </div>
-            </div>
-             <a href="#contact" class="absolute bottom-10 right-10 z-20 btn-outline">
-                Let's Connect <i class="fas fa-arrow-right ml-2"></i>
-            </a>
-        </section>
-
-        <!-- ====== Worked With Section ====== -->
-        <section class="py-16 border-t border-b border-gray-800">
-            <div class="container mx-auto px-6 lg:px-8 fade-in">
-                <h3 class="text-xl font-semibold mb-8 text-center md:text-left"><span class="text-brand-lime">|</span> Worked With</h3>
-                <div class="flex flex-wrap justify-center md:justify-between items-center gap-8">
-                    <!-- Replace with your client logos (use white/monochrome versions) -->
-                    <img src="https://logodownload.org/wp-content/uploads/2019/09/bjp-logo-0.png" alt="BJP Logo" class="h-8 filter grayscale brightness-200 contrast-100">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/PVR_Cinemas_logo.svg/2560px-PVR_Cinemas_logo.svg.png" alt="PVR Cinemas Logo" class="h-8 filter grayscale brightness-200 contrast-100">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Nikon_logo.svg/1200px-Nikon_logo.svg.png" alt="Nikon Logo" class="h-6 filter grayscale brightness-200 contrast-100">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/90/Cinepolis-logo-2022.png" alt="Cinepolis Logo" class="h-10 filter grayscale brightness-200 contrast-100">
-                    <img src="https://companieslogo.com/img/orig/WHR-8a305bda.png?t=1659163273" alt="Whirlpool Logo" class="h-8 filter grayscale brightness-200 contrast-100">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Emblem_of_India.svg" alt="Embassy of India" class="h-12 filter grayscale brightness-200 contrast-100">
-                </div>
+        <section id="home" class="relative h-screen w-full flex items-center justify-center text-center hero-video-fallback">
+            <!-- Background Video - Replace with a slow-mo Bengali wedding clip -->
+            <video autoplay loop muted playsinline class="absolute top-0 left-0 w-full h-full object-cover">
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-hindu-groom-being-prepared-for-his-wedding-4603-large.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <!-- Dark Overlay for Readability -->
+            <div class="absolute top-0 left-0 w-full h-full bg-black/60"></div>
+            
+            <!-- Content -->
+            <div class="relative z-10 px-4 fade-in">
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif text-white font-bold leading-tight mb-4" style="text-shadow: 2px 2px 10px rgba(0,0,0,0.7);">
+                    Your Story, Our Lens
+                </h1>
+                <p class="text-lg md:text-xl font-sans max-w-2xl mx-auto mb-8 text-light-text" style="text-shadow: 1px 1px 6px rgba(0,0,0,0.7);">
+                    আপনার গল্পের প্রতিটি মুহূর্ত, আমাদের ক্যামেরায় অমর
+                    <br> (Every moment of your story, immortalized by our camera)
+                </p>
+                <a href="#contact" class="btn-gold font-semibold py-3 px-10 rounded-lg text-lg transform hover:scale-105 shadow-lg">
+                    Enquire Now
+                </a>
             </div>
         </section>
 
-        <!-- ====== Portfolio Section ====== -->
-        <section id="portfolio" class="py-20 md:py-32 overflow-hidden">
+        <!-- ====== Services Section ====== -->
+        <section id="services" class="py-20 md:py-32 bg-dark-bg">
             <div class="container mx-auto px-6 lg:px-8">
-                <div class="flex justify-between items-center mb-12 fade-in">
-                    <h2 class="text-4xl md:text-5xl font-bold">Work that I am<br>truly <span class="text-brand-lime">Proud</span> of</h2>
-                    <div class="hidden md:flex items-center gap-4">
-                        <button @click="prevPortfolio()" class="btn-outline w-12 h-12 flex items-center justify-center"><i class="fas fa-arrow-left"></i></button>
-                        <button @click="nextPortfolio()" class="btn-outline w-12 h-12 flex items-center justify-center"><i class="fas fa-arrow-right"></i></button>
-                    </div>
+                <div class="text-center mb-16 fade-in">
+                    <h2 class="text-4xl md:text-5xl font-serif text-white mb-4">Professional Photography Services</h2>
+                    <p class="text-lg text-subtle-text max-w-2xl mx-auto">For your special day and every cherished moment.</p>
                 </div>
-                <div class="relative fade-in">
-                    <div class="overflow-hidden">
-                        <div class="flex transition-transform duration-500 ease-in-out" :style="`transform: translateX(-${portfolio.currentIndex * (100 / portfolio.itemsVisible)}%)`">
-                            <template x-for="(item, index) in portfolio.items" :key="index">
-                                <div class="p-2" :style="`flex: 0 0 ${100 / portfolio.itemsVisible}%`">
-                                    <div class="bg-brand-gray rounded-2xl p-4 group cursor-grab">
-                                        <div class="overflow-hidden rounded-lg mb-4">
-                                            <img :src="item.image" :alt="item.title" class="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-300">
-                                        </div>
-                                        <p class="font-medium text-center text-text-medium" x-text="item.description"></p>
-                                    </div>
-                                </div>
-                            </template>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                    <!-- Add your services here -->
+                    <div class="text-center fade-in">
+                        <div class="bg-dark-card p-8 rounded-lg border border-gray-800/50 shadow-lg hover:border-gold hover:-translate-y-2 transition-all duration-300">
+                            <i class="fas fa-ring text-4xl text-gold mb-4"></i>
+                            <h3 class="text-xl font-semibold text-light-text">Wedding</h3>
+                        </div>
+                    </div>
+                     <div class="text-center fade-in" style="transition-delay: 100ms;">
+                        <div class="bg-dark-card p-8 rounded-lg border border-gray-800/50 shadow-lg hover:border-gold hover:-translate-y-2 transition-all duration-300">
+                            <i class="fas fa-heart text-4xl text-gold mb-4"></i>
+                            <h3 class="text-xl font-semibold text-light-text">Pre-Wedding</h3>
+                        </div>
+                    </div>
+                    <div class="text-center fade-in" style="transition-delay: 200ms;">
+                        <div class="bg-dark-card p-8 rounded-lg border border-gray-800/50 shadow-lg hover:border-gold hover:-translate-y-2 transition-all duration-300">
+                            <i class="fas fa-hands-holding-child text-4xl text-gold mb-4"></i>
+                            <h3 class="text-xl font-semibold text-light-text">Rice Ceremony</h3>
+                        </div>
+                    </div>
+                    <div class="text-center fade-in" style="transition-delay: 300ms;">
+                        <div class="bg-dark-card p-8 rounded-lg border border-gray-800/50 shadow-lg hover:border-gold hover:-translate-y-2 transition-all duration-300">
+                            <i class="fas fa-birthday-cake text-4xl text-gold mb-4"></i>
+                            <h3 class="text-xl font-semibold text-light-text">Birthday</h3>
+                        </div>
+                    </div>
+                    <div class="text-center fade-in" style="transition-delay: 400ms;">
+                        <div class="bg-dark-card p-8 rounded-lg border border-gray-800/50 shadow-lg hover:border-gold hover:-translate-y-2 transition-all duration-300">
+                           <i class="fas fa-camera-retro text-4xl text-gold mb-4"></i>
+                            <h3 class="text-xl font-semibold text-light-text">Post-Wedding</h3>
+                        </div>
+                    </div>
+                    <div class="text-center fade-in" style="transition-delay: 500ms;">
+                        <div class="bg-dark-card p-8 rounded-lg border border-gray-800/50 shadow-lg hover:border-gold hover:-translate-y-2 transition-all duration-300">
+                            <i class="fas fa-gem text-4xl text-gold mb-4"></i>
+                            <h3 class="text-xl font-semibold text-light-text">Engagement</h3>
+                        </div>
+                    </div>
+                    <div class="text-center fade-in col-span-2 md:col-span-1" style="transition-delay: 600ms;">
+                        <div class="bg-dark-card p-8 rounded-lg border border-gray-800/50 shadow-lg hover:border-gold hover:-translate-y-2 transition-all duration-300">
+                            <i class="fas fa-calendar-star text-4xl text-gold mb-4"></i>
+                            <h3 class="text-xl font-semibold text-light-text">Any Event</h3>
                         </div>
                     </div>
                 </div>
-                 <div class="text-center mt-12 fade-in">
-                    <button class="bg-brand-gray py-4 px-8 rounded-full hover:bg-opacity-80 transition">
-                        View More <i class="fas fa-chevron-right ml-2 text-xs"></i>
-                    </button>
-                </div>
             </div>
         </section>
 
-        <!-- ====== Featured Courses Section ====== -->
-        <section id="courses" class="py-20 md:py-32 bg-brand-gray">
+        <!-- ====== Gallery Section ====== -->
+        <section id="gallery" class="py-20 md:py-32 bg-dark-card">
             <div class="container mx-auto px-6 lg:px-8">
-                <div class="text-center mb-12 fade-in">
-                     <h2 class="text-4xl md:text-5xl font-bold">Featured <span class="highlight">Courses</span></h2>
+                <div class="text-center mb-16 fade-in">
+                    <h2 class="text-4xl md:text-5xl font-serif text-white mb-4">Our Gallery (Chobighor)</h2>
+                    <p class="text-lg text-subtle-text max-w-2xl mx-auto">A glimpse into the beautiful stories we've captured.</p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 fade-in">
-                    <template x-for="(course, index) in courses" :key="index">
-                        <div class="bg-brand-dark p-4 rounded-2xl text-center flex flex-col">
-                            <div class="rounded-xl overflow-hidden mb-6">
-                                <img :src="course.image" :alt="course.title" class="w-full h-auto">
-                            </div>
-                            <h3 class="text-2xl font-semibold mb-4 flex-grow" x-text="course.title"></h3>
-                            <button class="bg-brand-lime text-brand-dark font-bold py-4 px-6 rounded-2xl w-full hover:opacity-80 transition">
-                                <span x-text="course.buttonText"></span>
-                                <span class="ml-2 text-sm line-through opacity-70" x-text="course.oldPrice" x-show="course.oldPrice"></span>
-                                <span class="ml-2" x-text="course.newPrice"></span>
-                            </button>
+                
+                <!-- Image Grid -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <template x-for="(image, index) in galleryImages" :key="index">
+                        <div class="fade-in overflow-hidden rounded-lg shadow-lg cursor-pointer group" @click="openLightbox(image, index)">
+                            <img loading="lazy" :src="image.thumb" :alt="'Bengali wedding photo ' + (index + 1)" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
                         </div>
                     </template>
                 </div>
-            </div>
-        </section>
 
-        <!-- ====== Quote Section ====== -->
-        <section class="py-20 md:py-40">
-            <div class="container mx-auto px-6 lg:px-8 text-center fade-in">
-                <h2 class="text-5xl md:text-7xl font-bold leading-tight">All the Amazing and Organised Things We See in This World Because <span class="block mt-4"><span class="highlight">God is a Designer.</span></span></h2>
+                <!-- Cinematic Reels -->
+                <div class="text-center mt-24 mb-16 fade-in">
+                    <h3 class="text-3xl md:text-4xl font-serif text-white mb-4">Cinematic Films</h3>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 fade-in">
+                    <!-- Replace with your YouTube/Vimeo video links -->
+                    <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-2xl shadow-black/30">
+                        <iframe src="https://www.youtube.com/embed/videoseries?list=PLXDm2d-b842w5G0s-mYq22_Y1a2b2iS3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="w-full h-full"></iframe>
+                    </div>
+                    <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-2xl shadow-black/30">
+                        <iframe src="https://player.vimeo.com/video/19835825?title=0&byline=0&portrait=0" class="w-full h-full" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- ====== About Me Section ====== -->
-        <section id="about" class="py-20 md:py-32">
-             <div class="container mx-auto px-6 lg:px-8">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center fade-in">
-                    <div class="bg-brand-gray rounded-3xl p-4">
-                        <!-- Replace with your about image -->
-                        <img src="https://i.imgur.com/eBvJ2yS.png" alt="About Vibhu Trivedi" class="rounded-2xl w-full">
-                    </div>
-                    <div>
-                        <h3 class="text-xl mb-6"><span class="text-brand-lime">|</span> About Me</h3>
-                        <h2 class="text-4xl font-bold mb-2">I'm Vibhu Trivedi</h2>
-                        <p class="text-brand-lime text-lg font-semibold mb-6">Art Director</p>
-                        <p class="text-text-medium text-lg mb-6">
-                            With over 10 years of experience based in Noida. I've collaborated with clients like <span class="text-white font-semibold">Nikon</span> and <span class="text-white font-semibold">Whirlpool</span>, crafting impactful visual solutions at ROI Mantra.
-                        </p>
-                        <p class="text-text-medium text-lg mb-8">
-                            Let's work together to turn your vision into stunning designs!
-                        </p>
-                        <a href="#" class="inline-flex items-center gap-4 bg-brand-lime text-brand-dark font-bold py-4 px-6 rounded-2xl hover:opacity-80 transition">
-                            <i class="fab fa-instagram text-3xl"></i>
-                            <div>
-                                <span>Instagram</span><br>
-                                <span class="font-normal">40K+</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-             </div>
-        </section>
-
-        <!-- ====== Marquee Section ====== -->
-        <div class="bg-brand-lime text-brand-dark py-6 overflow-hidden whitespace-nowrap">
-            <div class="flex animate-scroll">
-                <h3 class="text-4xl font-bold uppercase mx-8 flex items-center">Don't be a stranger <i class="fas fa-diamond mx-4 text-2xl"></i> Let's connect</h3>
-                <h3 class="text-4xl font-bold uppercase mx-8 flex items-center">Don't be a stranger <i class="fas fa-diamond mx-4 text-2xl"></i> Let's connect</h3>
-                <h3 class="text-4xl font-bold uppercase mx-8 flex items-center">Don't be a stranger <i class="fas fa-diamond mx-4 text-2xl"></i> Let's connect</h3>
-                <h3 class="text-4xl font-bold uppercase mx-8 flex items-center">Don't be a stranger <i class="fas fa-diamond mx-4 text-2xl"></i> Let's connect</h3>
-            </div>
-        </div>
-
-        <!-- ====== Testimonials Section ====== -->
-        <section id="testimonials" class="py-20 md:py-32">
+        <section id="about" class="py-20 md:py-32 bg-dark-bg">
             <div class="container mx-auto px-6 lg:px-8">
-                <div class="text-center mb-12 fade-in">
-                    <h2 class="text-4xl md:text-5xl font-bold">Design Success <span class="text-brand-lime">Stories</span></h2>
-                    <p class="text-text-medium mt-4">Transforming visions into impactful realities.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                    <div class="fade-in">
+                        <!-- Replace with a professional photo of yourself, Rupam -->
+                        <img loading="lazy" src="https://images.pexels.com/photos/3777943/pexels-photo-3777943.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Rupam - MAA PHOTOGRAPHY" class="rounded-lg shadow-xl w-full h-auto object-cover">
+                    </div>
+                    <div class="fade-in">
+                        <h2 class="text-4xl md:text-5xl font-serif text-white mb-6">About Me (Rupam)</h2>
+                        <p class="text-lg text-light-text mb-4">
+                            Hello! I am Rupam, the eye behind MAA PHOTOGRAPHY. For me, photography is not just a profession; it is a passion for storytelling. I specialize in capturing the real, emotional, and vibrant moments of Bengali weddings and other cultural celebrations.
+                        </p>
+                        <p class="text-lg text-light-text">
+                            My goal is to create a visual diary of your special day—one that you and your family will cherish for generations. I believe in a personal approach, getting to know you so I can tell your unique story with authenticity and artistry.
+                        </p>
+                    </div>
                 </div>
-                <div class="relative fade-in">
-                    <div class="overflow-hidden">
-                        <div class="flex transition-transform duration-500 ease-in-out" :style="`transform: translateX(-${testimonial.currentIndex * (100 / testimonial.itemsVisible)}%)`">
-                            <template x-for="(item, index) in testimonial.items" :key="index">
-                                <div class="p-4" :style="`flex: 0 0 ${100 / testimonial.itemsVisible}%`">
-                                    <div class="bg-brand-gray rounded-2xl p-8 h-full">
-                                        <p class="text-text-medium mb-6" x-text="item.quote"></p>
-                                        <div class="flex items-center gap-4">
-                                            <img :src="item.avatar" alt="avatar" class="w-12 h-12 rounded-full object-cover">
-                                            <div>
-                                                <p class="font-semibold" x-text="item.name"></p>
-                                                <p class="text-sm text-text-medium" x-text="item.location"></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </template>
+            </div>
+        </section>
+        
+        <!-- ====== Contact Section ====== -->
+        <section id="contact" class="py-20 md:py-32 bg-dark-card">
+            <div class="container mx-auto px-6 lg:px-8">
+                 <div class="text-center mb-16 fade-in">
+                    <h2 class="text-4xl md:text-5xl font-serif text-white mb-4">Get In Touch (Jogajog)</h2>
+                    <p class="text-lg text-subtle-text max-w-2xl mx-auto">Let's discuss how to make your special day unforgettable.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-12">
+                    <!-- Contact Info -->
+                    <div class="md:col-span-2 space-y-8 fade-in">
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-phone text-2xl text-gold mt-1"></i>
+                            <div>
+                                <h3 class="text-xl font-semibold text-white">Call / WhatsApp</h3>
+                                <a href="tel:7586920917" class="text-lg text-subtle-text hover:text-gold transition">7586920917</a>
+                            </div>
+                        </div>
+                         <div class="flex items-start gap-4">
+                            <i class="fas fa-envelope text-2xl text-gold mt-1"></i>
+                            <div>
+                                <h3 class="text-xl font-semibold text-white">Mail</h3>
+                                <a href="mailto:rupam8263@gmail.com" class="text-lg text-subtle-text hover:text-gold transition">rupam8263@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-hashtag text-2xl text-gold mt-1"></i>
+                            <div>
+                                <h3 class="text-xl font-semibold text-white">Follow Us</h3>
+                                <p class="text-lg text-subtle-text">#Maaphotography</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- ====== Contact Section ====== -->
-        <section id="contact" class="py-20 md:py-32">
-            <div class="container mx-auto px-6 lg:px-8">
-                <div class="text-center mb-12 fade-in">
-                    <h2 class="text-4xl md:text-5xl font-bold">Let's Work <span class="text-brand-lime">Together</span></h2>
-                    <p class="text-text-medium mt-4 max-w-2xl mx-auto">Whether you have a question, or want to discuss a potential project, I'm here to help. Please fill out the form below!!</p>
+                    <!-- Contact Form -->
+                    <div class="md:col-span-3 bg-dark-bg p-8 rounded-lg shadow-2xl shadow-black/30 fade-in">
+                        <form action="#" method="POST">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+                                <input type="text" placeholder="Your Name" required class="w-full p-3 bg-dark-card border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-gold transition">
+                                <input type="email" placeholder="Your Email" required class="w-full p-3 bg-dark-card border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-gold transition">
+                            </div>
+                            <div class="mb-6">
+                                <input type="tel" placeholder="Phone Number" required class="w-full p-3 bg-dark-card border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-gold transition">
+                            </div>
+                             <div class="mb-6">
+                                <input type="text" placeholder="Event Type (e.g., Wedding, Birthday)" required class="w-full p-3 bg-dark-card border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-gold transition">
+                            </div>
+                            <div class="mb-6">
+                                <textarea placeholder="Your Message" rows="4" class="w-full p-3 bg-dark-card border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-gold transition"></textarea>
+                            </div>
+                            <button type="submit" class="w-full btn-gold font-semibold py-3 px-8 rounded-lg text-lg">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
                 </div>
-                <form action="#" method="POST" class="max-w-3xl mx-auto space-y-6 fade-in">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <input type="text" name="name" placeholder="Name" required class="form-input">
-                        <input type="email" name="email" placeholder="Email" required class="form-input">
-                    </div>
-                    <input type="tel" name="phone" placeholder="Phone" class="form-input">
-                    <textarea name="message" rows="5" placeholder="Message" required class="form-input !rounded-3xl"></textarea>
-                    <div class="text-center">
-                        <button type="submit" class="btn-outline px-8 py-4">
-                            Send Message <i class="fas fa-arrow-right ml-2"></i>
-                        </button>
-                    </div>
-                </form>
             </div>
         </section>
 
     </main>
     
     <!-- ====== Footer ====== -->
-    <footer class="bg-brand-dark pt-16 pb-8 border-t border-gray-800">
-        <div class="container mx-auto px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h3 class="text-4xl md:text-6xl font-black tracking-tighter text-gray-500">DON'T BE SHY.</h3>
-                <h3 class="text-4xl md:text-6xl font-black tracking-tighter text-white">SAY もしもし.</h3>
-                <div class="w-1/3 h-px bg-brand-lime mx-auto my-6"></div>
-                <a href="mailto:info@designwithvibhu.com" class="text-xl md:text-2xl hover:text-brand-lime transition">info@designwithvibhu.com</a>
+    <footer class="bg-black py-12">
+        <div class="container mx-auto px-6 lg:px-8 text-center text-subtle-text">
+            <a href="#home" class="text-2xl font-serif font-bold text-gold tracking-wider mb-4 inline-block">
+                MAA PHOTOGRAPHY
+            </a>
+            <div class="flex justify-center space-x-6 my-6">
+                <a href="#" target="_blank" class="hover:text-gold text-2xl transition-colors"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank" class="hover:text-gold text-2xl transition-colors"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" target="_blank" class="hover:text-gold text-2xl transition-colors"><i class="fab fa-youtube"></i></a>
             </div>
-            <div class="flex flex-col md:flex-row justify-between items-center gap-8 mb-8">
-                <a href="#" class="flex items-center gap-2">
-                    <img src="https://i.imgur.com/G4O0VRe.png" alt="Logo" class="h-10 w-10">
-                    <span class="font-bold text-lg">designwithvibhu</span>
-                </a>
-                <div>
-                    <p class="text-text-medium">WhatsApp</p>
-                    <p class="text-lg">+91 79052 61764</p>
-                </div>
-                <div class="flex items-center gap-6 text-xl">
-                    <a href="#" class="hover:text-brand-lime transition"><i class="fab fa-behance"></i></a>
-                    <a href="#" class="hover:text-brand-lime transition"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-            </div>
-            <div class="border-t border-gray-800 pt-6 flex flex-col sm:flex-row justify-between items-center text-sm text-text-medium">
-                <p>Crafted with <span class="text-pink-500">♥</span> by Creative Vishal</p>
-                <p>© 2025 All rights Reserved.</p>
-            </div>
+            <p>© 2024 MAA PHOTOGRAPHY by Rupam. All Rights Reserved.</p>
+            <p class="text-sm mt-2">Designed with a cinematic touch.</p>
         </div>
     </footer>
 
+    <!-- ====== Lightbox ====== -->
+    <div x-show="lightbox.open" @keydown.escape.window="closeLightbox()" class="fixed inset-0 bg-black/95 z-[99] flex items-center justify-center p-4" style="display: none;">
+        <div class="relative max-w-5xl max-h-[90vh] w-full">
+            <img :src="lightbox.imageSrc" alt="Lightbox image" class="w-full h-auto object-contain max-h-[90vh] rounded-lg">
+            <button @click="closeLightbox()" class="absolute -top-3 -right-3 text-white bg-dark-card rounded-full w-10 h-10 flex items-center justify-center text-2xl hover:bg-gold hover:text-dark-bg transition">×</button>
+            <button @click="prevImage()" class="absolute left-0 sm:-left-16 top-1/2 -translate-y-1/2 text-white bg-dark-card/50 rounded-full w-12 h-12 flex items-center justify-center text-2xl hover:bg-gold hover:text-dark-bg transition"><</button>
+            <button @click="nextImage()" class="absolute right-0 sm:-right-16 top-1/2 -translate-y-1/2 text-white bg-dark-card/50 rounded-full w-12 h-12 flex items-center justify-center text-2xl hover:bg-gold hover:text-dark-bg transition">></button>
+        </div>
+    </div>
+    
+    <!-- ====== WhatsApp Floating Button ====== -->
+    <a href="https://wa.me/917586920917?text=Hello%20MAA%20PHOTOGRAPHY!%20I'm%20interested%20in%20your%20services." 
+       target="_blank" 
+       class="fixed bottom-6 right-6 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg transform hover:scale-110 transition-transform z-40">
+        <i class="fab fa-whatsapp text-4xl"></i>
+    </a>
 
     <!-- ====== JavaScript ====== -->
     <script>
         function pageData() {
             return {
-                // Portfolio Slider
-                portfolio: {
-                    currentIndex: 0,
-                    itemsVisible: 4.5, // How many items to show on desktop
-                    items: [
-                        // Add your portfolio items here
-                        { image: 'https://i.imgur.com/1OqYyvV.png', description: 'I CREATED THIS CONCEPT FOR KEVENTERS ON THE OCCASION ON EID' },
-                        { image: 'https://i.imgur.com/h9D6sB8.png', description: 'I CREATED THIS CONCEPT FOR EV CHARGER BRAND' },
-                        { image: 'https://i.imgur.com/8Q9j7Jg.png', description: 'I CREATED ASSIGNMENT FOR SMART WATCH BRAND CELLECOR' },
-                        { image: 'https://i.imgur.com/814r7cO.png', description: 'WORKED ON EV CHARGER CAMPAIGN' },
-                        { image: 'https://i.imgur.com/uR1d5kP.jpeg', description: 'AI GENERATED CONCEPT FOR INDEPENDENCE DAY' },
-                        { image: 'https://i.imgur.com/B7yT0kC.png', description: 'PROMOTIONAL POSTER FOR A MUSIC EVENT' },
-                        { image: 'https://i.imgur.com/N7fU3wR.png', description: 'BRANDING FOR A MODERN TECH STARTUP' },
-                    ],
-                    get totalSlides() { return this.items.length }
-                },
-                nextPortfolio() {
-                    if (this.portfolio.currentIndex < this.portfolio.totalSlides - Math.floor(this.portfolio.itemsVisible)) {
-                        this.portfolio.currentIndex++;
-                    }
-                },
-                prevPortfolio() {
-                    if (this.portfolio.currentIndex > 0) {
-                        this.portfolio.currentIndex--;
-                    }
-                },
-                
-                // Course Data
-                courses: [
-                    { 
-                        image: 'https://i.imgur.com/3Z7wL1n.png', 
-                        title: 'Design Like a Pro 2.0', 
-                        buttonText: 'Join Live Classes',
-                        oldPrice: '',
-                        newPrice: '₹4,999'
-                    },
-                    { 
-                        image: 'https://i.imgur.com/kP8Zk9d.png', 
-                        title: 'Design Like a Pro', 
-                        buttonText: 'Enroll Now',
-                        oldPrice: '₹5,000',
-                        newPrice: '₹3,499'
-                    },
-                    { 
-                        image: 'https://i.imgur.com/KqA4wzC.png', 
-                        title: 'Combo+', 
-                        buttonText: 'Enroll Now',
-                        oldPrice: '₹10,000',
-                        newPrice: '₹7,499'
-                    }
+                // Gallery and Lightbox Data
+                galleryImages: [
+                    // IMPORTANT: Replace these with your own photos. Use high-quality links.
+                    // I've used images that reflect a Bengali/Indian wedding theme.
+                    { thumb: 'https://images.pexels.com/photos/1024989/pexels-photo-1024989.jpeg?auto=compress&cs=tinysrgb&w=600', full: 'https://images.pexels.com/photos/1024989/pexels-photo-1024989.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
+                    { thumb: 'https://images.pexels.com/photos/1488318/pexels-photo-1488318.jpeg?auto=compress&cs=tinysrgb&w=600', full: 'https://images.pexels.com/photos/1488318/pexels-photo-1488318.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
+                    { thumb: 'https://images.pexels.com/photos/169190/pexels-photo-169190.jpeg?auto=compress&cs=tinysrgb&w=600', full: 'https://images.pexels.com/photos/169190/pexels-photo-169190.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
+                    { thumb: 'https://images.pexels.com/photos/1729931/pexels-photo-1729931.jpeg?auto=compress&cs=tinysrgb&w=600', full: 'https://images.pexels.com/photos/1729931/pexels-photo-1729931.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
+                    { thumb: 'https://images.pexels.com/photos/1128783/pexels-photo-1128783.jpeg?auto=compress&cs=tinysrgb&w=600', full: 'https://images.pexels.com/photos/1128783/pexels-photo-1128783.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
+                    { thumb: 'https://images.pexels.com/photos/1488327/pexels-photo-1488327.jpeg?auto=compress&cs=tinysrgb&w=600', full: 'https://images.pexels.com/photos/1488327/pexels-photo-1488327.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
+                    { thumb: 'https://images.pexels.com/photos/3014856/pexels-photo-3014856.jpeg?auto=compress&cs=tinysrgb&w=600', full: 'https://images.pexels.com/photos/3014856/pexels-photo-3014856.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
+                    { thumb: 'https://images.pexels.com/photos/1344437/pexels-photo-1344437.jpeg?auto=compress&cs=tinysrgb&w=600', full: 'https://images.pexels.com/photos/1344437/pexels-photo-1344437.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
                 ],
-
-                // Testimonial Slider
-                testimonial: {
-                    currentIndex: 0,
-                    itemsVisible: 3, // How many items to show on desktop
-                    items: [
-                        { avatar: 'https://randomuser.me/api/portraits/women/68.jpg', name: 'Viktor S.', location: 'Newcastle, Australia', quote: 'Vibhu was wonderful to work with. He delivered high-quality work, communicated well throughout, and I\'ll definitely be hiring him again.' },
-                        { avatar: 'https://randomuser.me/api/portraits/men/32.jpg', name: 'Aqiva', location: 'Israel', quote: 'Amazing work delivered with clear communication and dedication! Vibhu truly impressed me, and his attention to detail was amazing.' },
-                        { avatar: 'https://randomuser.me/api/portraits/women/44.jpg', name: 'Chula Vista', location: 'United States', quote: 'Vibhu made me absolutely happy and satisfied with his designs! I will definitely be hiring him again for future projects. Highly talented!' },
-                        { avatar: 'https://randomuser.me/api/portraits/men/46.jpg', name: 'Glen Canyon', location: 'United States', quote: 'The communication was outstanding, going beyond his duty and delivering work that I highly recommend. He is very professional.' },
-                    ],
-                    get totalSlides() { return this.items.length }
+                lightbox: { open: false, imageSrc: '', currentIndex: 0, },
+                openLightbox(image, index) {
+                    this.lightbox.imageSrc = image.full;
+                    this.lightbox.currentIndex = index;
+                    this.lightbox.open = true;
                 },
-
-                // Update items visible based on screen size
-                updateItemsVisible() {
-                    if (window.innerWidth < 768) {
-                        this.portfolio.itemsVisible = 1.2;
-                        this.testimonial.itemsVisible = 1.1;
-                    } else if (window.innerWidth < 1024) {
-                        this.portfolio.itemsVisible = 2.5;
-                        this.testimonial.itemsVisible = 2;
-                    } else {
-                        this.portfolio.itemsVisible = 4.5;
-                        this.testimonial.itemsVisible = 3;
-                    }
+                closeLightbox() { this.lightbox.open = false; },
+                nextImage() {
+                    this.lightbox.currentIndex = (this.lightbox.currentIndex + 1) % this.galleryImages.length;
+                    this.lightbox.imageSrc = this.galleryImages[this.lightbox.currentIndex].full;
+                },
+                prevImage() {
+                    this.lightbox.currentIndex = (this.lightbox.currentIndex - 1 + this.galleryImages.length) % this.galleryImages.length;
+                    this.lightbox.imageSrc = this.galleryImages[this.lightbox.currentIndex].full;
                 },
 
                 // Fade-in on scroll
@@ -451,11 +401,7 @@
                     });
                 },
                 
-                init() {
-                    this.updateItemsVisible();
-                    window.addEventListener('resize', () => this.updateItemsVisible());
-                    this.handleScroll(); // Initial check
-                }
+                init() { this.handleScroll(); }
             };
         }
     </script>
