@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elysian Moments | Wedding Photography & Cinematography</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Elysian Moments specializes in cinematic wedding photography and videography, capturing the timeless essence of your love story with elegance and artistry.">
+    <meta name="keywords" content="wedding photography, wedding cinematography, wedding videographer, luxury wedding photographer, destination wedding, cinematic wedding films">
+    <meta name="author" content="Elysian Moments">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-website-url.com/">
+    <meta property="og:title" content="Elysian Moments | Wedding Photography & Cinematography">
+    <meta property="og:description" content="Capturing timeless love stories with cinematic elegance.">
+    <meta property="og:image" content="https://images.pexels.com/photos/1779479/pexels-photo-1779479.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"> <!-- Replace with your own preview image -->
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://your-website-url.com/">
+    <meta property="twitter:title" content="Elysian Moments | Wedding Photography & Cinematography">
+    <meta property="twitter:description" content="Capturing timeless love stories with cinematic elegance.">
+    <meta property="twitter:image" content="https://images.pexels.com/photos/1779479/pexels-photo-1779479.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"> <!-- Replace with your own preview image -->
+
+    <!-- Favicon (replace with your own) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💖</text></svg>">
+    
+    <!-- Google Fonts: Playfair Display & Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'cream': '#FDF8F0',
+                        'blush': '#EAD7D1',
+                        'gold': '#BFA181',
+                        'dark-gray': '#3A3A3A',
+                    },
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'serif'],
+                        'sans': ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Alpine.js for interactivity -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Custom CSS for animations and tweaks -->
+    <style>
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .hero-video-fallback {
+            background-image: url('https://images.pexels.com/photos/3228801/pexels-photo-3228801.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body class="bg-cream font-sans text-dark-gray antialiased" x-data="pageData()">
+
+    <!-- ====== Header ====== -->
+    <header x-data="{ scrolled: false, mobileMenuOpen: false }" 
+            @scroll.window="scrolled = (window.scrollY > 50)"
+            :class="{ 'bg-cream/95 shadow-md backdrop-blur-sm text-dark-gray': scrolled, 'text-white': !scrolled }"
+            class="fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#home" class="text-2xl font-serif font-bold transition hover:opacity-80">
+                    Elysian Moments
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-gold transition-colors">Home</a>
+                    <a href="#about" class="hover:text-gold transition-colors">About</a>
+                    <a href="#portfolio" class="hover:text-gold transition-colors">Portfolio</a>
+                    <a href="#packages" class="hover:text-gold transition-colors">Packages</a>
+                    <a href="#testimonials" class="hover:text-gold transition-colors">Testimonials</a>
+                    <a href="#contact" class="hover:text-gold transition-colors">Contact</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button @click="mobileMenuOpen = !mobileMenuOpen" class="focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div x-show="mobileMenuOpen" @click.away="mobileMenuOpen = false" 
+             x-transition:enter="transition ease-out duration-300"
+             x-transition:enter-start="opacity-0 transform -translate-y-2"
+             x-transition:enter-end="opacity-100 transform translate-y-0"
+             x-transition:leave="transition ease-in duration-200"
+             x-transition:leave-start="opacity-100 transform translate-y-0"
+             x-transition:leave-end="opacity-0 transform -translate-y-2"
+             class="md:hidden absolute top-full left-0 w-full bg-cream shadow-lg text-dark-gray"
+             style="display: none;">
+            <nav class="flex flex-col items-center space-y-4 py-6">
+                <a @click="mobileMenuOpen = false" href="#home" class="hover:text-gold transition-colors">Home</a>
+                <a @click="mobileMenuOpen = false" href="#about" class="hover:text-gold transition-colors">About</a>
+                <a @click="mobileMenuOpen = false" href="#portfolio" class="hover:text-gold transition-colors">Portfolio</a>
+                <a @click="mobileMenuOpen = false" href="#packages" class="hover:text-gold transition-colors">Packages</a>
+                <a @click="mobileMenuOpen = false" href="#testimonials" class="hover:text-gold transition-colors">Testimonials</a>
+                <a @click="mobileMenuOpen = false" href="#contact" class="hover:text-gold transition-colors">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ====== Hero Section ====== -->
+        <section id="home" class="relative h-screen w-full flex items-center justify-center text-center text-white hero-video-fallback">
+            <!-- Background Video -->
+            <video autoplay loop muted playsinline class="absolute top-0 left-0 w-full h-full object-cover">
+                <!-- Replace with your own high-quality, vertical-friendly video -->
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-the-hands-of-a-bride-and-groom-at-their-wedding-4530-large.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+            <!-- Overlay -->
+            <div class="absolute top-0 left-0 w-full h-full bg-black/40"></div>
+            
+            <!-- Content -->
+            <div class="relative z-10 px-4 animate-fade-in-up">
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif font-bold leading-tight mb-4" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.6);">
+                    Capturing Timeless Love Stories
+                </h1>
+                <p class="text-lg md:text-xl font-sans max-w-2xl mx-auto mb-8" style="text-shadow: 1px 1px 4px rgba(0,0,0,0.6);">
+                    With cinematic artistry and a romantic touch, we preserve the moments you'll cherish forever.
+                </p>
+                <a href="#contact" class="bg-gold text-white font-semibold py-3 px-8 rounded-full hover:bg-white hover:text-gold transition-all duration-300 ease-in-out transform hover:scale-105 shadow-lg">
+                    Book Now
+                </a>
+            </div>
+        </section>
+
+        <!-- ====== About Us Section ====== -->
+        <section id="about" class="py-20 md:py-32 bg-cream">
+            <div class="container mx-auto px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div class="fade-in">
+                        <img loading="lazy" src="https://images.pexels.com/photos/313707/pexels-photo-313707.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Photographer with camera" class="rounded-lg shadow-xl w-full h-auto object-cover">
+                    </div>
+                    <div class="fade-in">
+                        <h2 class="text-4xl md:text-5xl font-serif text-dark-gray mb-6">Our Story</h2>
+                        <p class="text-lg text-gray-600 mb-4">
+                            Welcome to Elysian Moments, where we believe every love story is a work of art waiting to be told. Founded by a passionate duo of visual storytellers, our mission is to capture the authentic, emotional, and breathtaking moments of your special day.
+                        </p>
+                        <p class="text-lg text-gray-600">
+                            We blend documentary-style photography with cinematic videography to create a timeless narrative of your wedding. We focus on the candid smiles, the gentle touches, and the heartfelt emotions that make your day uniquely yours.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== Portfolio Section ====== -->
+        <section id="portfolio" class="py-20 md:py-32 bg-white">
+            <div class="container mx-auto px-6 lg:px-8">
+                <div class="text-center mb-12 fade-in">
+                    <h2 class="text-4xl md:text-5xl font-serif text-dark-gray mb-4">Our Work</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">Explore a collection of our favorite moments, each telling a unique story of love.</p>
+                </div>
+                
+                <!-- Image Grid -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <template x-for="(image, index) in portfolioImages" :key="index">
+                        <div class="fade-in overflow-hidden rounded-lg shadow-lg cursor-pointer" @click="openLightbox(image, index)">
+                            <img loading="lazy" :src="image.thumb" :alt="'Wedding photo ' + (index + 1)" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500 ease-in-out">
+                        </div>
+                    </template>
+                </div>
+
+                <!-- Cinematic Reels -->
+                <div class="text-center mt-20 mb-12 fade-in">
+                    <h3 class="text-3xl md:text-4xl font-serif text-dark-gray mb-4">Cinematic Reels</h3>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">Experience the emotion and beauty of a wedding day through our films.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 fade-in">
+                    <!-- Vimeo/YouTube Embed 1 -->
+                    <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-xl">
+                        <iframe src="https://player.vimeo.com/video/29950141?title=0&byline=0&portrait=0" class="w-full h-full" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <!-- Vimeo/YouTube Embed 2 -->
+                    <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-xl">
+                        <iframe src="https://www.youtube.com/embed/e-ORhEE9VVg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="w-full h-full"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== Packages Section ====== -->
+        <section id="packages" class="py-20 md:py-32 bg-cream">
+            <div class="container mx-auto px-6 lg:px-8">
+                <div class="text-center mb-12 fade-in">
+                    <h2 class="text-4xl md:text-5xl font-serif text-dark-gray mb-4">Our Packages</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">Choose a package that perfectly fits your needs, or let us create a custom one for you.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Package 1: Essential -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg text-center flex flex-col fade-in">
+                        <h3 class="text-2xl font-serif font-bold mb-4">The Essential</h3>
+                        <p class="text-gray-500 mb-6">Perfect for intimate celebrations.</p>
+                        <ul class="text-left space-y-3 mb-8 flex-grow">
+                            <li class="flex items-center"><i class="fas fa-check text-gold mr-3"></i> 6 Hours Coverage</li>
+                            <li class="flex items-center"><i class="fas fa-check text-gold mr-3"></i> 1 Photographer</li>
+                            <li class="flex items-center"><i class="fas fa-check text-gold mr-3"></i> 300+ Edited Photos</li>
+                            <li class="flex items-center"><i class="fas fa-check text-gold mr-3"></i> Online Gallery</li>
+                        </ul>
+                        <a href="#contact" class="mt-auto bg-dark-gray text-white py-3 px-6 rounded-full hover:bg-gold transition-colors duration-300">Get a Quote</a>
+                    </div>
+                    <!-- Package 2: Premium (Highlighted) -->
+                    <div class="bg-white p-8 rounded-lg shadow-xl text-center flex flex-col border-2 border-gold transform md:scale-105 fade-in">
+                         <span class="bg-gold text-white text-xs font-bold px-3 py-1 rounded-full absolute -top-4 left-1/2 -translate-x-1/2">MOST POPULAR</span>
+                        <h3 class="text-2xl font-serif font-bold mb-4">The Premium</h3>
+                        <p class="text-gray-500 mb-6">Our most requested photo & video combo.</p>
+                        <ul class="text-left space-y-3 mb-8 flex-grow">
+                            <li class="flex items-center"><i class="fas fa-check text-gold mr-3"></i> 8 Hours Coverage</li>
+                            <li class="flex items-center"><i class="fas fa-check text-gold mr-3"></i> 1 Photographer & 1 Videographer</li>
+                            <li class="flex items-center"><i class="fas fa-check text-gold mr-3"></i> 500+ Edited Photos</li>
+                            <li class="flex items-center"><i class="fas fa-check text-gold mr-3"></i> 3-5 Minute Highlight Film</li>
+                            <li class="flex items-center"><i class="fas fa-check text-gold mr-3"></i> Drone Footage (where permitted)</li>
+                            <li class="flex items-center"><i class="fas fa-check text-gold mr-3"></i> Online Gallery</li>
+                        </ul>
+                        <a href="#contact" class="mt-auto bg-gold text-white py-3 px-6 rounded-full hover:bg-dark-gray transition-colors duration-300">Get a Quote</a>
+                    </div>
+                    <!-- Package 3: Luxury -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg text-center flex flex-col fade-in">
+                        <h3 class="text-2xl font-serif font-bold mb-4">The Luxury</h3>
+                        <p class="text-gray-500 mb-6">The ultimate cinematic experience.</p>
+                        <ul class="text-left space-y-3 mb-8 flex-grow">
+                            <li class="flex items-center"><i class="fas fa-check text-gold mr-3"></i> Full Day Coverage</li>
+                            <li class="flex items-center"><i class="fas fa-check text-gold mr-3"></i> 2 Photographers & 2 Videographers</li>
+                            <li class="flex items-center"><i class="fas fa-check text-gold mr-3"></i> 800+ Edited Photos</li>
+                            <li class="flex items-center"><i class="fas fa-check text-gold mr-3"></i> 8-10 Minute Cinematic Film</li>
+                            <li class="flex items-center"><i class="fas fa-check text-gold mr-3"></i> Full Ceremony & Speeches Edit</li>
+                            <li class="flex items-center"><i class="fas fa-check text-gold mr-3"></i> Luxury Wedding Album</li>
+                        </ul>
+                        <a href="#contact" class="mt-auto bg-dark-gray text-white py-3 px-6 rounded-full hover:bg-gold transition-colors duration-300">Get a Quote</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== Testimonials Section ====== -->
+        <section id="testimonials" class="py-20 md:py-32 bg-white">
+            <div class="container mx-auto px-6 lg:px-8">
+                <div class="text-center mb-12 fade-in">
+                    <h2 class="text-4xl md:text-5xl font-serif text-dark-gray mb-4">Words of Love</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">Hear from couples who entrusted us with their special day.</p>
+                </div>
+                <div x-data="testimonialSlider()" class="relative max-w-3xl mx-auto fade-in">
+                    <div class="overflow-hidden">
+                        <div class="flex transition-transform duration-500 ease-in-out" :style="`transform: translateX(-${currentIndex * 100}%)`">
+                            <template x-for="(testimonial, index) in testimonials" :key="index">
+                                <div class="w-full flex-shrink-0 text-center px-8">
+                                    <img loading="lazy" :src="testimonial.image" alt="Client photo" class="w-24 h-24 rounded-full mx-auto mb-6 object-cover shadow-lg">
+                                    <blockquote class="text-lg md:text-xl italic text-gray-700 mb-4">
+                                        "“<span x-text="testimonial.quote"></span>”"
+                                    </blockquote>
+                                    <cite class="not-italic font-semibold text-dark-gray" x-text="testimonial.name"></cite>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                    <!-- Slider controls -->
+                    <button @click="prev()" class="absolute top-1/2 -translate-y-1/2 left-0 text-gold hover:text-dark-gray text-3xl transition-colors">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button @click="next()" class="absolute top-1/2 -translate-y-1/2 right-0 text-gold hover:text-dark-gray text-3xl transition-colors">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== Contact Section ====== -->
+        <section id="contact" class="py-20 md:py-32 bg-cream">
+            <div class="container mx-auto px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div class="fade-in">
+                        <h2 class="text-4xl md:text-5xl font-serif text-dark-gray mb-4">Let's Tell Your Story</h2>
+                        <p class="text-lg text-gray-600 mb-6">
+                            We'd be honored to be a part of your wedding day. Please fill out the form, and we'll get back to you within 24 hours to schedule a complimentary consultation.
+                        </p>
+                        <div class="space-y-4">
+                            <p class="text-lg"><i class="fas fa-envelope text-gold mr-3"></i> hello@elysianmoments.com</p>
+                            <p class="text-lg"><i class="fas fa-phone text-gold mr-3"></i> (123) 456-7890</p>
+                            <p class="text-lg"><i class="fas fa-map-marker-alt text-gold mr-3"></i> Based in New York, Available Worldwide</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg fade-in">
+                        <form action="#" method="POST" id="contact-form">
+                            <div class="mb-5">
+                                <label for="name" class="block mb-2 font-medium text-dark-gray">Full Name</label>
+                                <input type="text" id="name" name="name" required class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gold transition">
+                            </div>
+                            <div class="mb-5">
+                                <label for="email" class="block mb-2 font-medium text-dark-gray">Email Address</label>
+                                <input type="email" id="email" name="email" required class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gold transition">
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
+                                <div>
+                                    <label for="phone" class="block mb-2 font-medium text-dark-gray">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gold transition">
+                                </div>
+                                <div>
+                                    <label for="event_date" class="block mb-2 font-medium text-dark-gray">Event Date</label>
+                                    <input type="date" id="event_date" name="event_date" required class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gold transition">
+                                </div>
+                            </div>
+                            <div class="mb-5">
+                                <label for="message" class="block mb-2 font-medium text-dark-gray">Tell us about your day...</label>
+                                <textarea id="message" name="message" rows="4" required class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gold transition"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-gold text-white font-semibold py-3 px-8 rounded-full hover:bg-dark-gray transition-colors duration-300 shadow-lg">
+                                Send Inquiry
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== Social Proof Section ====== -->
+        <section id="social" class="py-20 bg-white">
+            <div class="container mx-auto px-6 lg:px-8 text-center fade-in">
+                <h2 class="text-3xl md:text-4xl font-serif text-dark-gray mb-4">Follow Our Journey</h2>
+                <p class="text-lg text-gray-600 mb-8">Get daily inspiration and see our latest work on social media.</p>
+                <div class="flex justify-center space-x-6">
+                    <a href="#" target="_blank" class="text-dark-gray hover:text-gold text-4xl transition-colors"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank" class="text-dark-gray hover:text-gold text-4xl transition-colors"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank" class="text-dark-gray hover:text-gold text-4xl transition-colors"><i class="fab fa-youtube"></i></a>
+                    <a href="#" target="_blank" class="text-dark-gray hover:text-gold text-4xl transition-colors"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <!-- ====== Footer ====== -->
+    <footer class="bg-dark-gray text-cream py-16">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+                <!-- Brand -->
+                <div>
+                    <h3 class="text-2xl font-serif font-bold mb-4">Elysian Moments</h3>
+                    <p class="text-gray-400">Crafting visual legacies of love, one frame at a time.</p>
+                </div>
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="hover:text-gold transition-colors text-gray-400">About Us</a></li>
+                        <li><a href="#portfolio" class="hover:text-gold transition-colors text-gray-400">Portfolio</a></li>
+                        <li><a href="#packages" class="hover:text-gold transition-colors text-gray-400">Packages</a></li>
+                        <li><a href="#contact" class="hover:text-gold transition-colors text-gray-400">Contact</a></li>
+                    </ul>
+                </div>
+                <!-- Social -->
+                <div>
+                    <h4 class="font-semibold text-lg mb-4">Connect</h4>
+                     <div class="flex justify-center md:justify-start space-x-4">
+                        <a href="#" target="_blank" class="hover:text-gold text-2xl transition-colors"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank" class="hover:text-gold text-2xl transition-colors"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" target="_blank" class="hover:text-gold text-2xl transition-colors"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-500">
+                <p>© 2024 Elysian Moments. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ====== Lightbox ====== -->
+    <div x-show="lightbox.open" @keydown.escape.window="closeLightbox()" class="fixed inset-0 bg-black/90 z-[99] flex items-center justify-center" style="display: none;">
+        <div class="relative max-w-4xl max-h-[90vh] w-full mx-4">
+            <img :src="lightbox.imageSrc" alt="Lightbox image" class="w-full h-auto object-contain max-h-[90vh] rounded-lg">
+            <button @click="closeLightbox()" class="absolute -top-2 -right-2 text-white bg-dark-gray rounded-full w-10 h-10 flex items-center justify-center text-2xl hover:bg-gold transition">×</button>
+            <button @click="prevImage()" class="absolute left-0 top-1/2 -translate-y-1/2 text-white bg-dark-gray/50 rounded-full w-12 h-12 flex items-center justify-center text-2xl hover:bg-gold transition ml-4"><</button>
+            <button @click="nextImage()" class="absolute right-0 top-1/2 -translate-y-1/2 text-white bg-dark-gray/50 rounded-full w-12 h-12 flex items-center justify-center text-2xl hover:bg-gold transition mr-4">></button>
+        </div>
+    </div>
+    
+    <!-- ====== WhatsApp Floating Button ====== -->
+    <a href="https://wa.me/1234567890?text=Hello!%20I'm%20interested%20in%20your%20wedding%20packages." 
+       target="_blank" 
+       class="fixed bottom-6 right-6 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg transform hover:scale-110 transition-transform z-40">
+        <i class="fab fa-whatsapp text-4xl"></i>
+    </a>
+
+    <!-- ====== JavaScript ====== -->
+    <script>
+        // --- Minimal JS for animations, lightbox, and sliders ---
+
+        function pageData() {
+            return {
+                // Portfolio and Lightbox Data
+                portfolioImages: [
+                    { thumb: 'https://images.pexels.com/photos/1779479/pexels-photo-1779479.jpeg?auto=compress&cs=tinysrgb&w=600', full: 'https://images.pexels.com/photos/1779479/pexels-photo-1779479.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
+                    { thumb: 'https://images.pexels.com/photos/169198/pexels-photo-169198.jpeg?auto=compress&cs=tinysrgb&w=600', full: 'https://images.pexels.com/photos/169198/pexels-photo-169198.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
+                    { thumb: 'https://images.pexels.com/photos/1024993/pexels-photo-1024993.jpeg?auto=compress&cs=tinysrgb&w=600', full: 'https://images.pexels.com/photos/1024993/pexels-photo-1024993.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
+                    { thumb: 'https://images.pexels.com/photos/1488316/pexels-photo-1488316.jpeg?auto=compress&cs=tinysrgb&w=600', full: 'https://images.pexels.com/photos/1488316/pexels-photo-1488316.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
+                    { thumb: 'https://images.pexels.com/photos/157879/gift-jeans-fashion-pack-157879.jpeg?auto=compress&cs=tinysrgb&w=600', full: 'https://images.pexels.com/photos/157879/gift-jeans-fashion-pack-157879.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
+                    { thumb: 'https://images.pexels.com/photos/3779705/pexels-photo-3779705.jpeg?auto=compress&cs=tinysrgb&w=600', full: 'https://images.pexels.com/photos/3779705/pexels-photo-3779705.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
+                    { thumb: 'https://images.pexels.com/photos/2253870/pexels-photo-2253870.jpeg?auto=compress&cs=tinysrgb&w=600', full: 'https://images.pexels.com/photos/2253870/pexels-photo-2253870.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
+                    { thumb: 'https://images.pexels.com/photos/3228801/pexels-photo-3228801.jpeg?auto=compress&cs=tinysrgb&w=600', full: 'https://images.pexels.com/photos/3228801/pexels-photo-3228801.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
+                ],
+                lightbox: {
+                    open: false,
+                    imageSrc: '',
+                    currentIndex: 0,
+                },
+                openLightbox(image, index) {
+                    this.lightbox.imageSrc = image.full;
+                    this.lightbox.currentIndex = index;
+                    this.lightbox.open = true;
+                },
+                closeLightbox() {
+                    this.lightbox.open = false;
+                },
+                nextImage() {
+                    this.lightbox.currentIndex = (this.lightbox.currentIndex + 1) % this.portfolioImages.length;
+                    this.lightbox.imageSrc = this.portfolioImages[this.lightbox.currentIndex].full;
+                },
+                prevImage() {
+                    this.lightbox.currentIndex = (this.lightbox.currentIndex - 1 + this.portfolioImages.length) % this.portfolioImages.length;
+                    this.lightbox.imageSrc = this.portfolioImages[this.lightbox.currentIndex].full;
+                },
+
+                // Contact form validation
+                initForm() {
+                    const form = document.getElementById('contact-form');
+                    form.addEventListener('submit', function(e) {
+                        e.preventDefault();
+                        // Basic validation check
+                        if (form.checkValidity()) {
+                            alert('Thank you for your message! We will get back to you soon.');
+                            form.reset();
+                        } else {
+                             alert('Please fill out all required fields correctly.');
+                        }
+                    });
+                },
+                
+                init() {
+                    this.initFadeIn();
+                    this.initForm();
+                },
+
+                // Fade-in on scroll
+                initFadeIn() {
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('is-visible');
+                            }
+                        });
+                    }, { threshold: 0.1 });
+
+                    document.querySelectorAll('.fade-in').forEach(el => {
+                        observer.observe(el);
+                    });
+                }
+            };
+        }
+
+        // Testimonial slider data and logic
+        function testimonialSlider() {
+            return {
+                currentIndex: 0,
+                testimonials: [
+                    {
+                        quote: "Elysian Moments was the best decision we made for our wedding. The photos are absolutely breathtaking, and they captured our day so perfectly. We can't stop looking at them!",
+                        name: "Jessica & Tom",
+                        image: "https://images.pexels.com/photos/3775164/pexels-photo-3775164.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    },
+                    {
+                        quote: "The cinematic film they created for us is like a real movie. It brings us to tears every time we watch it. Their professionalism and artistic eye are unmatched.",
+                        name: "Sophia & Michael",
+                        image: "https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    },
+                    {
+                        quote: "From the first consultation to the final delivery, the team was incredible. They made us feel so comfortable and captured so many beautiful, candid moments. Highly recommended!",
+                        name: "Emily & David",
+                        image: "https://images.pexels.com/photos/3771836/pexels-photo-3771836.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    }
+                ],
+                next() {
+                    this.currentIndex = (this.currentIndex + 1) % this.testimonials.length;
+                },
+                prev() {
+                    this.currentIndex = (this.currentIndex - 1 + this.testimonials.length) % this.testimonials.length;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
